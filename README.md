@@ -12,3 +12,6 @@
 8.  [Yup](https://www.npmjs.com/package/yup)
 9.  [React Hook Form](https://www.npmjs.com/package/react-hook-form)
 10. [@hookform/resolvers](https://www.npmjs.com/package/@hookform/resolvers)
+11. [Redux Tool Kit](https://www.npmjs.com/package/@reduxjs/toolkit)
+12. [React Redux](https://www.npmjs.com/package/react-redux)
+13. [Redux Persist](https://www.npmjs.com/package/redux-persist)

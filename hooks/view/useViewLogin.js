@@ -5,11 +5,14 @@ import loginSchema from "../../utils/validators/login";
 import { supabase } from "../../utils/helpers/supabase";
 import { useState } from "react";
 import { useNavigation } from "expo-router";
+import { addUser } from "../../store/slices/user";
+import { useDispatch } from "react-redux";
+import { useGetUserSessionDetails } from "../api/user/useUser";
 
 const useViewLogin = () => {
+  const dispatch = useDispatch();
   const navigation = useNavigation();
   const [loading, setLoading] = useState(false);
-
   const {
     control,
     handleSubmit,
@@ -18,6 +21,8 @@ const useViewLogin = () => {
     resolver: yupResolver(loginSchema),
   });
 
+  const { isLoading, data, isError } = useGetUserSessionDetails();
+
   const signInWithEmail = async (data) => {
     setLoading(true);
     const response = await supabase.auth.signInWithPassword(data);
@@ -25,7 +30,13 @@ const useViewLogin = () => {
     if (response.error) {
       return Alert.alert(response.error.message);
     }
-    console.info("user has signed in", response);
+    dispatch(
+      addUser({
+        accessToken: response.data.session.access_token ?? "",
+        id: response.data.session.user.id ?? "",
+        email: response.data.session.user.email ?? "",
+      })
+    );
     navigation.navigate("home");
   };
 
@@ -58,7 +69,10 @@ const useViewLogin = () => {
     loading,
     control,
     handleSubmit,
-    errors
+    errors,
+    isLoading,
+    data,
+    isError,
   };
 };
 

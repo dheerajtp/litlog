@@ -3,6 +3,7 @@ import Loading from "../components/common/Loading";
 import useViewLogin from "../hooks/view/useViewLogin";
 import FormField from "../components/common/FormField";
 import styles from "../assets/styles";
+import { Redirect } from "expo-router";
 
 const Login = () => {
   const {
@@ -12,11 +13,17 @@ const Login = () => {
     control,
     handleSubmit,
     errors,
+    isLoading,
+    isError,
+    data,
   } = useViewLogin();
 
-  if (loading) {
+  if (loading || isLoading) {
     return <Loading />;
   }
+  //  else if (data.status) {
+  //   return <Redirect href="/home" />;
+  // }
   return (
     <View style={styles.loginContainer}>
       <View style={[styles.verticallySpaced, styles.mt20]}>
