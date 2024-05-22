@@ -1,7 +1,18 @@
 import { Redirect } from "expo-router";
+import { Text, View } from "react-native";
+import { useSelector } from "react-redux";
 
 const App = () => {
-  return <Redirect href="/login" />;
+  const user = useSelector((state) => state.user);
+  // if (!user.value.user) {
+  //   return <Redirect href="(auth)/(tabs)/login" />;
+  // }
+  // return <Redirect href="(home)/(tabs)" />;
+  return (
+    <View>
+      <Text>Hello</Text>
+    </View>
+  );
 };
 
 export default App;

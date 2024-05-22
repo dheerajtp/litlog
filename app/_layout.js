@@ -7,7 +7,6 @@ import { Provider } from "react-redux";
 import { persistStoreDetails, store } from "../store/store";
 import { PersistGate } from "redux-persist/integration/react";
 
-
 const queryClient = new QueryClient();
 
 AppState.addEventListener("change", (state) => {
@@ -23,10 +22,10 @@ const ApplicationLayout = () => {
     <QueryClientProvider client={queryClient}>
       <Provider store={store}>
         <PersistGate persistor={persistStoreDetails} loading={null}>
-        <StatusBar style="auto" />
+          <StatusBar style="auto" />
           <Slot />
         </PersistGate>
-        </Provider>
+      </Provider>
     </QueryClientProvider>
   );
 };

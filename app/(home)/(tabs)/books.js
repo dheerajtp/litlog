@@ -1,11 +1,11 @@
 import { Text, View } from "react-native";
 
-const Home = () => {
+const Books = () => {
   return (
     <View>
-      <Text>Home</Text>
+      <Text>Books</Text>
     </View>
   );
 };
 
-export default Home;
+export default Books;

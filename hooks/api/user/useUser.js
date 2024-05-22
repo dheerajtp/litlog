@@ -11,13 +11,17 @@ export const useGetUserSessionDetails = () => {
   });
 
   if (data && data.status) {
-    dispatch(
-      addUser({
-        accessToken: data.session.access_token ?? "",
-        id: data.session.user.id ?? "",
-        email: data.session.user.email ?? "",
-      })
-    );
+    if (data.session) {
+      dispatch(
+        addUser({
+          accessToken: data.session.access_token ?? "",
+          id: data.session.user.id ?? "",
+          email: data.session.user.email ?? "",
+        })
+      );
+    } else {
+      dispatch(removeUser());
+    }
   } else {
     dispatch(removeUser());
   }
