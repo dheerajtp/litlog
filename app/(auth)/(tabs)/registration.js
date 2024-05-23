@@ -1,3 +1,4 @@
+import React from "react";
 import { Button, Text, View } from "react-native";
 import Loading from "../../../components/common/Loading";
 import useViewLogin from "../../../hooks/view/useViewLogin";
@@ -13,14 +14,18 @@ const Registration = () => {
     handleSubmit,
     errors,
     isLoading,
-    isError,
     data,
+    shouldRedirect,
   } = useViewLogin();
+
   if (loading || isLoading) {
     return <Loading />;
-  } else if (data.status) {
+  }
+
+  if (shouldRedirect && data?.status) {
     return <Redirect href="/(home)/(tabs)" />;
   }
+
   return (
     <View style={styles.loginContainer}>
       <View style={[styles.verticallySpaced, styles.mt20]}>
@@ -45,7 +50,7 @@ const Registration = () => {
           placeholder="Password"
         />
       </View>
-      <View style={styles.verticallySpaced}>
+      <View style={[styles.verticallySpaced, styles.mt20]}>
         <Button
           title="Sign up"
           disabled={loading}

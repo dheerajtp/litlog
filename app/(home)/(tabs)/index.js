@@ -12,11 +12,13 @@ const HomeScreen = () => {
       <Text>HomeScreen</Text>
 
       <Button
-        title="Sign up"
+        title="Sign Out"
         onPress={async () => {
-          await supabase.auth.signOut();
+          let result = await supabase.auth.signOut();
+          console.log(" === result inside sign out ");
+          console.log(result);
           dispatch(removeUser());
-          router.replace("(auth)/(tabs)/login");
+          router.push("/(auth)/(tabs)/login");
         }}
       />
     </View>

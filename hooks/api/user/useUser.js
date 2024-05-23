@@ -8,6 +8,8 @@ export const useGetUserSessionDetails = () => {
   const { isLoading, isError, data } = useQuery({
     queryKey: ["user-session"],
     queryFn: userServices.getSession,
+    staleTime: Infinity,
+    cacheTime: Infinity,
   });
 
   if (data && data.status) {
