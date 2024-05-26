@@ -14,10 +14,7 @@ const userSlice = createSlice({
       state.value.user = action.payload;
     },
     removeUser: (state) => {
-      console.log("inside here");
       state.value.user = null;
-
-      console.log(state.value);
     },
   },
 });

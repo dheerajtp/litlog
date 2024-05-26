@@ -8,13 +8,8 @@ import { Redirect } from "expo-router";
 import { useSelector } from "react-redux";
 
 const Login = () => {
-  const user = useSelector((state) => state.user.value);
   const { signInWithEmail, loading, control, handleSubmit, errors, isLoading } =
     useViewLogin();
-
-  if (user.user != null) {
-    return <Redirect href="/(home)/(tabs)" />;
-  }
 
   if (loading || isLoading) {
     return <Loading />;

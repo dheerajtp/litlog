@@ -3,8 +3,8 @@ import { Feather } from "@expo/vector-icons";
 import { useSelector } from "react-redux";
 const HomeTabs = () => {
   const user = useSelector((state) => state.user.value);
-  console.log(user, "in home layout");
-  if (!user) {
+
+  if (!user.user) {
     return <Redirect href="(auth)/(tabs)/login" />;
   }
   return (
