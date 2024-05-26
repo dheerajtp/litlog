@@ -15,3 +15,11 @@
 11. [Redux Tool Kit](https://www.npmjs.com/package/@reduxjs/toolkit)
 12. [React Redux](https://www.npmjs.com/package/react-redux)
 13. [Redux Persist](https://www.npmjs.com/package/redux-persist)
+
+### ActionItems
+
+[] Task 1 : Create Home Page Section which will show case a graphical representation of books i read, current reading streak, total books count
+
+[] Task 2 : Books section - A Section which will help me to Create/ Store book details with page number, author, completed or not, Current reading page etc
+
+[] Task 3 ; Single Book View Section with integration to a dictionary and a section to store these word and word meaning to a book.
