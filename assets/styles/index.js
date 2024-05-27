@@ -63,6 +63,14 @@ const styles = StyleSheet.create({
   loadingSize: {
     transform: [{ scaleX: 2 }, { scaleY: 2 }],
   },
+  graphBG: {
+    backgroundColor: "#FFFFFF",
+  },
+  activityGraphHeaderText: {
+    fontSize: 16,
+    fontWeight: "bold",
+    color: "#000000",
+  },
 });
 
 export default styles;
