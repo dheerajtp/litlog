@@ -63,6 +63,53 @@ const styles = StyleSheet.create({
   loadingSize: {
     transform: [{ scaleX: 2 }, { scaleY: 2 }],
   },
+  graphBG: {
+    backgroundColor: "#FFFFFF",
+  },
+  activityGraphHeaderText: {
+    fontSize: 16,
+    fontWeight: "bold",
+    color: "#000000",
+  },
+  floatingContainer: {
+    flex: 1,
+    justifyContent: "flex-end",
+    alignItems: "flex-end",
+    margin: 16,
+  },
+  floatingIcon: {
+    backgroundColor: "white",
+    borderRadius: 30,
+    width: 60,
+    height: 60,
+    justifyContent: "center",
+    alignItems: "center",
+    elevation: 5,
+    shadowColor: "rgba(0,0,0, .4)",
+    shadowOffset: { height: 1, width: 1 },
+    shadowOpacity: 1,
+    shadowRadius: 3,
+  },
+  booksContainer: {
+    flex: 1,
+    position: "relative",
+  },
+  booleanFieldContainer: {
+    flexDirection: "row",
+    alignItems: "center",
+  },
+  booleanFieldLabel: {
+    marginLeft: 10,
+  },
+  buttonSpacing: {
+    marginTop: 4,
+    marginBottom: 4,
+    alignSelf: "stretch",
+  },
+  createBookContainer: {
+    margin: 20,
+    padding: 12,
+  },
 });
 
 export default styles;

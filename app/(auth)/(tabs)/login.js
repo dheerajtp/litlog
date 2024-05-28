@@ -4,8 +4,6 @@ import Loading from "../../../components/common/Loading";
 import useViewLogin from "../../../hooks/view/useViewLogin";
 import FormField from "../../../components/common/FormField";
 import styles from "../../../assets/styles";
-import { Redirect } from "expo-router";
-import { useSelector } from "react-redux";
 
 const Login = () => {
   const { signInWithEmail, loading, control, handleSubmit, errors, isLoading } =
