@@ -36,6 +36,14 @@ const HomeTabs = () => {
           ),
         }}
       />
+      <Tabs.Screen
+        name="new-book"
+        options={{
+          href: null,
+          presentation: "modal",
+          title: "New Book",
+        }}
+      />
     </Tabs>
   );
 };
