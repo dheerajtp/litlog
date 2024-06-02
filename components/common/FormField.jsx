@@ -7,8 +7,8 @@ const FormField = ({
   control,
   errors,
   placeholder,
-  keyboardType,
-  secureTextEntry,
+  keyboardType = "default",
+  secureTextEntry = false,
   type = "input",
 }) => {
   if (type === "boolean") {
@@ -17,10 +17,10 @@ const FormField = ({
         <Controller
           name={name}
           control={control}
-          render={({ field }) => (
+          render={({ field: { value, onChange } }) => (
             <Switch
-              value={field.value}
-              onValueChange={field.onChange}
+              value={value}
+              onValueChange={onChange}
               style={styles.switch}
             />
           )}
@@ -35,11 +35,12 @@ const FormField = ({
       <Controller
         name={name}
         control={control}
-        render={({ field }) => (
+        render={({ field: { onChange, onBlur, value } }) => (
           <TextInput
             placeholder={placeholder}
-            onChangeText={field.onChange}
-            value={field.value}
+            onChangeText={onChange}
+            onBlur={onBlur}
+            value={value}
             style={styles.input}
             keyboardType={keyboardType}
             secureTextEntry={secureTextEntry}

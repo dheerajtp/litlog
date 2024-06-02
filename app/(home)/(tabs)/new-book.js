@@ -5,7 +5,12 @@ import styles from "../../../assets/styles";
 import useCreateNewBook from "../../../hooks/view/useCreateNewBook";
 
 const NewBook = () => {
-  const { control, errors, handleSubmit, addBookDetails } = useCreateNewBook();
+  const { control, errors, handleSubmit, addBookDetails, loading } =
+    useCreateNewBook();
+
+  if (loading) {
+    return <Loading />;
+  }
   return (
     <View style={{ flex: 1 }}>
       <ScrollView contentContainerStyle={styles.createBookContainer}>
@@ -36,7 +41,7 @@ const NewBook = () => {
             <Text style={styles.textAlign}>Publisher</Text>
           </View>
           <FormField
-            name="publisher"
+            name="publishers"
             control={control}
             errors={errors}
             placeholder="Publisher"
@@ -95,12 +100,16 @@ const NewBook = () => {
             control={control}
             errors={errors}
             type="boolean"
-            placeholder={true}
+            placeholder={"Select Completed Or Not"}
           />
         </View>
       </ScrollView>
       <View style={[styles.buttonSpacing, styles.mt20]}>
-        <Button title="Create Book" onPress={handleSubmit(addBookDetails)} />
+        <Button
+          disabled={loading}
+          title="Create Book"
+          onPress={handleSubmit(addBookDetails)}
+        />
       </View>
     </View>
   );
