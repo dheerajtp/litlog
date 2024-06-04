@@ -110,6 +110,26 @@ const styles = StyleSheet.create({
     margin: 20,
     padding: 12,
   },
+  card: {
+    backgroundColor: "white",
+    width: responsiveWidth(80),
+    borderRadius: 16,
+    overflow: "hidden",
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 3.84,
+    elevation: 5,
+    marginVertical: 18,
+  },
+  title: {
+    marginBottom: 18,
+    fontSize: 24,
+    color: "black",
+  },
 });
 
 export default styles;
