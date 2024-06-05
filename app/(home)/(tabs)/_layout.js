@@ -44,6 +44,10 @@ const HomeTabs = () => {
           title: "New Book",
         }}
       />
+      <Tabs.Screen
+        name="[id]"
+        options={{ href: null, title: "Book Details" }}
+      />
     </Tabs>
   );
 };

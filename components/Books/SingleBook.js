@@ -1,12 +1,20 @@
-import { View, Text } from "react-native";
+import { View, Text, Pressable } from "react-native";
 import styles from "../../assets/styles";
+import { useRouter } from "expo-router";
 
 const SingleBook = ({ item }) => {
+  const router = useRouter();
+
   return (
     <View style={styles.card}>
-      <View style={styles.articleBody}>
+      <Pressable
+        style={styles.articleBody}
+        onPress={() => {
+          router.push(`(home)/(tabs)/${item.id}`);
+        }}
+      >
         <Text style={styles.title}>{item.name}</Text>
-      </View>
+      </Pressable>
     </View>
   );
 };

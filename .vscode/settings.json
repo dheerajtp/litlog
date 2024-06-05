@@ -1,8 +1,3 @@
 {
-    "cSpell.words": [
-        "hookform",
-        "persistor",
-        "reduxjs",
-        "supabase"
-    ]
+  "cSpell.words": ["hookform", "persistor", "Pressable", "reduxjs", "supabase"]
 }
