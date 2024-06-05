@@ -16,16 +16,16 @@ const Books = () => {
   }
   return (
     <View style={styles.booksContainer}>
-      <View style={styles.loadingContainer}>
-        <FlatList
-          data={result["_j"]["data"]}
-          renderItem={({ item }) => {
-            return <SingleBook item={item} />;
-          }}
-          keyExtractor={(item) => item.id}
-          showsVerticalScrollIndicator={false}
-        />
-      </View>
+      <FlatList
+        data={result["_j"]["data"]}
+        renderItem={({ item }) => {
+          return <SingleBook item={item} />;
+        }}
+        keyExtractor={(item) => item.id}
+        showsVerticalScrollIndicator={false}
+        contentContainerStyle={styles.flatListContentContainer}
+        numColumns={2}
+      />
       <FloatingPlusIcon />
     </View>
   );

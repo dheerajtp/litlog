@@ -72,10 +72,9 @@ const styles = StyleSheet.create({
     color: "#000000",
   },
   floatingContainer: {
-    flex: 1,
-    justifyContent: "flex-end",
-    alignItems: "flex-end",
-    margin: 16,
+    position: "absolute",
+    bottom: 20,
+    right: 20,
   },
   floatingIcon: {
     backgroundColor: "white",
@@ -92,7 +91,34 @@ const styles = StyleSheet.create({
   },
   booksContainer: {
     flex: 1,
-    position: "relative",
+    paddingBottom: 60,
+    paddingHorizontal: 16,
+  },
+  flatListContentContainer: {
+    paddingBottom: 60,
+  },
+  card: {
+    backgroundColor: "white",
+    flex: 1,
+    margin: 8,
+    height: responsiveWidth(40),
+    borderRadius: 16,
+    overflow: "hidden",
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 3.84,
+    elevation: 5,
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  title: {
+    marginBottom: 18,
+    fontSize: 24,
+    color: "black",
   },
   booleanFieldContainer: {
     flexDirection: "row",
@@ -109,26 +135,6 @@ const styles = StyleSheet.create({
   createBookContainer: {
     margin: 20,
     padding: 12,
-  },
-  card: {
-    backgroundColor: "white",
-    width: responsiveWidth(80),
-    borderRadius: 16,
-    overflow: "hidden",
-    shadowColor: "#000",
-    shadowOffset: {
-      width: 0,
-      height: 2,
-    },
-    shadowOpacity: 0.25,
-    shadowRadius: 3.84,
-    elevation: 5,
-    marginVertical: 18,
-  },
-  title: {
-    marginBottom: 18,
-    fontSize: 24,
-    color: "black",
   },
 });
 
