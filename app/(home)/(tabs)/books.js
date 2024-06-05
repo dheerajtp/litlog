@@ -5,6 +5,7 @@ import useCreateNewBook from "../../../hooks/view/useCreateNewBook";
 import Loading from "../../../components/common/Loading";
 import Error from "../../../components/common/Error";
 import SingleBook from "../../../components/Books/SingleBook";
+import Empty from "../../../components/common/Empty";
 
 const Books = () => {
   const { readAllBookDetails } = useCreateNewBook();
@@ -13,6 +14,13 @@ const Books = () => {
     return <Loading />;
   } else if (result["_j"]["isError"]) {
     return <Error />;
+  } else if (result["_j"]["data"].length == 0) {
+    return (
+      <View style={styles.booksContainer}>
+        <Empty />
+        <FloatingPlusIcon />
+      </View>
+    );
   }
   return (
     <View style={styles.booksContainer}>

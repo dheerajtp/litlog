@@ -1,4 +1,4 @@
-import { useQuery } from "@tanstack/react-query";
+import { useQuery, useQueryClient } from "@tanstack/react-query";
 import { Alert } from "react-native";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
@@ -9,6 +9,7 @@ import { useSelector } from "react-redux";
 import bookServices from "../../services/bookServices";
 
 const useCreateNewBook = () => {
+  const queryClient = useQueryClient();
   const user = useSelector((state) => state.user.value);
   const [loading, setLoading] = useState(false);
   const {
@@ -46,6 +47,7 @@ const useCreateNewBook = () => {
         throw error;
       }
       Alert.alert("Book added successfully.");
+      queryClient.invalidateQueries(["get-user-books"]);
       reset();
     } catch (error) {
       console.log(error);
@@ -56,12 +58,9 @@ const useCreateNewBook = () => {
   };
 
   const readAllBookDetails = async () => {
-    console.log("read all book details");
     let result = useQuery({
       queryKey: ["get-user-books"],
       queryFn: () => bookServices.getBooks(user.user.id),
-      staleTime: Infinity,
-      cacheTime: Infinity,
     });
     return result;
   };
