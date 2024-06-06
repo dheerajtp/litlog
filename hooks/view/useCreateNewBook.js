@@ -58,11 +58,10 @@ const useCreateNewBook = () => {
   };
 
   const readAllBookDetails = async () => {
-    let result = useQuery({
+    return useQuery({
       queryKey: ["get-user-books"],
       queryFn: () => bookServices.getBooks(user.user.id),
     });
-    return result;
   };
 
   return {

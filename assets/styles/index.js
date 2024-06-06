@@ -136,6 +136,55 @@ const styles = StyleSheet.create({
     margin: 20,
     padding: 12,
   },
+  singleBookContainer: {
+    flexGrow: 1,
+    justifyContent: "center",
+    alignItems: "center",
+    padding: 20,
+    backgroundColor: "#f5f5f5",
+  },
+  bookContainer: {
+    width: "100%",
+    backgroundColor: "#fff",
+    padding: 20,
+    borderRadius: 10,
+    shadowColor: "#000",
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.3,
+    shadowRadius: 3,
+    elevation: 5,
+    marginBottom: 8,
+  },
+  singleBookTitle: {
+    fontSize: 24,
+    fontWeight: "bold",
+    marginBottom: 10,
+  },
+  singleBookAuthor: {
+    fontSize: 18,
+    color: "#888",
+    marginBottom: 10,
+  },
+  singleBookDetails: {
+    fontSize: 16,
+    marginBottom: 5,
+  },
+  boxContainer: {
+    width: "100%",
+    backgroundColor: "#fff",
+    padding: 20,
+    borderRadius: 10,
+    shadowColor: "#000",
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.3,
+    shadowRadius: 3,
+    elevation: 5,
+    marginBottom: 20,
+  },
+  boxText: {
+    fontSize: 18,
+    fontWeight: "bold",
+  },
 });
 
 export default styles;
