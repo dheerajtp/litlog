@@ -18,7 +18,7 @@ const Books = () => {
     return (
       <View style={styles.booksContainer}>
         <Empty />
-        <FloatingPlusIcon />
+        <FloatingPlusIcon route="(home)/(tabs)/new-book" />
       </View>
     );
   }
@@ -35,7 +35,7 @@ const Books = () => {
         contentContainerStyle={styles.flatListContentContainer}
         numColumns={2}
       />
-      <FloatingPlusIcon />
+      <FloatingPlusIcon route="(home)/(tabs)/new-book" />
     </View>
   );
 };

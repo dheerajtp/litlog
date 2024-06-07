@@ -9,14 +9,16 @@ const useViewSingleBook = () => {
     });
     return result;
   };
-  const handleQuotesPress = () => {
-    // Navigate to quotes page
-  };
 
-  const handleReadActivityPress = () => {
-    // Navigate to read activity page
+  const getDetailsBasedOnType = (id, type) => {
+    if (type == "quotes") {
+      return useQuery({
+        queryKey: ["get-quotes", id, type],
+        queryFn: () => bookServices.getQuoteDetails(id),
+      });
+    }
   };
-  return { getBookDetails, handleQuotesPress, handleReadActivityPress };
+  return { getBookDetails, getDetailsBasedOnType };
 };
 
 export default useViewSingleBook;

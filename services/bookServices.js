@@ -31,9 +31,27 @@ const getSingleBookDetails = async (id) => {
   }
 };
 
+const getQuoteDetails = async (id) => {
+  try {
+    let { data, error } = await supabase
+      .from("quotes")
+      .select("*")
+      .eq("book_id", id);
+    if (error) {
+      console.log(error, "error after getting result");
+      throw error;
+    }
+    return data;
+  } catch (error) {
+    console.log(error);
+    return error;
+  }
+};
+
 const bookServices = {
   getBooks,
   getSingleBookDetails,
+  getQuoteDetails,
 };
 
 export default bookServices;

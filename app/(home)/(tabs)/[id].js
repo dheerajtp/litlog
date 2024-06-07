@@ -1,5 +1,5 @@
 import { Text, View, ScrollView, Button, TouchableOpacity } from "react-native";
-import { useLocalSearchParams, useNavigation } from "expo-router";
+import { Link, useLocalSearchParams, useNavigation } from "expo-router";
 import useViewSingleBook from "../../../hooks/view/useViewSingleBooks";
 import Loading from "../../../components/common/Loading";
 import Error from "../../../components/common/Error";
@@ -9,8 +9,7 @@ import styles from "../../../assets/styles";
 const bookDetail = () => {
   const navigation = useNavigation();
   const { id } = useLocalSearchParams();
-  const { getBookDetails, handleQuotesPress, handleReadActivityPress } =
-    useViewSingleBook();
+  const { getBookDetails } = useViewSingleBook();
   const result = getBookDetails(id);
   console.info(JSON.stringify(result), "result", result.isLoading);
   if (result.isLoading) {
@@ -52,17 +51,26 @@ const bookDetail = () => {
           );
         })}
       </View>
-      <TouchableOpacity style={styles.boxContainer} onPress={handleQuotesPress}>
+      <Link
+        href={{
+          pathname: "/details",
+          params: { id, type: "quotes" },
+        }}
+        style={styles.boxContainer}
+      >
         <Text style={styles.boxText}>Quotes</Text>
-      </TouchableOpacity>
+      </Link>
 
       {result.data && !result.data[0].completed && (
-        <TouchableOpacity
+        <Link
+          href={{
+            pathname: "/details",
+            params: { id, type: "quotes" },
+          }}
           style={styles.boxContainer}
-          onPress={handleReadActivityPress}
         >
           <Text style={styles.boxText}>Daily Read Activity</Text>
-        </TouchableOpacity>
+        </Link>
       )}
     </ScrollView>
   );

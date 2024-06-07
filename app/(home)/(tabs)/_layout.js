@@ -48,6 +48,11 @@ const HomeTabs = () => {
         name="[id]"
         options={{ href: null, title: "Book Details" }}
       />
+      <Tabs.Screen name="details" options={{ href: null, title: "Details" }} />
+      <Tabs.Screen
+        name="add-content"
+        options={{ href: null, title: "Add Content" }}
+      />
     </Tabs>
   );
 };
