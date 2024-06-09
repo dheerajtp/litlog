@@ -185,6 +185,41 @@ const styles = StyleSheet.create({
     fontSize: 18,
     fontWeight: "bold",
   },
+  quoteContainer: {
+    backgroundColor: "#f5f5f5",
+    padding: 20,
+    borderRadius: 10,
+    marginVertical: 10,
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 3.84,
+    elevation: 5,
+  },
+  quoteText: {
+    fontSize: 18,
+    fontStyle: "italic",
+    lineHeight: 24,
+  },
+  quoteName: {
+    fontSize: 24,
+    fontWeight: "bold",
+  },
+  pageNumber: {
+    fontSize: 16,
+    color: "#888",
+    marginTop: 10,
+    textAlign: "right",
+  },
+  flatListContainer: {
+    paddingHorizontal: 16,
+  },
+  verticalMargin: {
+    marginVertical: 8,
+  },
 });
 
 export default styles;

@@ -11,7 +11,6 @@ const bookDetail = () => {
   const { id } = useLocalSearchParams();
   const { getBookDetails } = useViewSingleBook();
   const result = getBookDetails(id);
-  console.info(JSON.stringify(result), "result", result.isLoading);
   if (result.isLoading) {
     return <Loading />;
   }
@@ -65,7 +64,7 @@ const bookDetail = () => {
         <Link
           href={{
             pathname: "/details",
-            params: { id, type: "quotes" },
+            params: { id, type: "readActivity" },
           }}
           style={styles.boxContainer}
         >

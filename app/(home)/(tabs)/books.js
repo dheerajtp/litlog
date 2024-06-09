@@ -22,7 +22,6 @@ const Books = () => {
       </View>
     );
   }
-  console.log(result["_j"]["data"], "result in books");
   return (
     <View style={styles.booksContainer}>
       <FlatList
